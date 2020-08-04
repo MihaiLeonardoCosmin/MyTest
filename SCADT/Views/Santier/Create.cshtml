@@ -1,0 +1,21 @@
+﻿@model SCADT.ViewModels.AddSantierViewModel
+@Html.Partial("_NavBar")
+
+<link rel="stylesheet" type="text/css" href="~/Content/FormAdaugaSantier.css" />
+
+<div class="row col-md-12 ">
+    <h2 class="text-center">Adauga Santier</h2>
+</div>
+
+@Html.Partial("FormSantier")
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+<script src="~/Scripts/FormSantier.js"></script>
+
+
+

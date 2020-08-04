@@ -1,0 +1,22 @@
+﻿@model SCADT.Models.Utilaj
+@Html.Partial("_NavBar")
+<div>
+    <h4>Utilaj</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denumire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denumire)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

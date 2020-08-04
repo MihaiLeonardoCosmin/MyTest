@@ -1,0 +1,19 @@
+﻿@Html.Partial("_HeadHome")
+
+@if(TempData["check"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["check"]
+    </div>
+}
+
+<div class="row col-md-12 ">
+    <div class="col-md-6">
+        <a href="@Url.Action("SignUp","Home")" class="btn btn-warning btn-lg">Creaza Cont</a>
+    </div>
+    <div class="col-md-6">
+        <a href="@Url.Action("LogIn","Home")" class="btn btn-primary btn-lg">Log In</a>
+    </div>
+</div>
+
+ 

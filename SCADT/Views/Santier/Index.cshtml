@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SCADT.Models.Santier>
+@Html.Partial("_NavBar")
+
+
+@if(TempData["Check"] != null)
+{
+    <div class="alert alert-info">
+        <h4 class="lead">@TempData["Check"]</h4>
+    </div>
+}
+
+<p> 
+    <a href="@Url.Action("Create","Santier")" class="btn btn-primary">Adauga Santier</a>
+</p>
+  
+@if(Model.Count() <= 0)
+{
+    <div class="alert alert-warning">
+        <h3 class="lead">Nu aveti santiere adaugate</h3>
+    </div>
+}
+else
+{
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Denumire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Locatie)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Stagiu)
+        </th>
+          
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Denumire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Locatie)
+        </td>
+         
+        <td>
+            @Html.DisplayFor(modelItem => item.Stagiu)
+        </td>
+     
+        <td>
+
+            <a href="@Url.Action("Edit","Santier",new { id = item.Id })" class="btn btn-primary">Edit</a>
+            <a href="@Url.Action("Detail","Santier",new { id = item.Id })" class="btn btn-warning">Detali </a>
+            <a href="@Url.Action("Delete", "Santier", new {id = item.Id})" class="btn btn-danger">Sterge</a>
+        </td>
+    </tr>
+}
+
+</table>
+
+
+}

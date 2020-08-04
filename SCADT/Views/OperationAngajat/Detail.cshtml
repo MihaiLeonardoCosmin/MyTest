@@ -1,0 +1,30 @@
+﻿@model SCADT.Models.Angajat
+@Html.Partial("_NavBar")
+<div>
+    <h4>ControlContentWebSite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Functie </dt>
+
+         <dd>  @Html.DisplayFor(m => m.FunctiAngajat.Denumire)</dd>
+        
+        <dt>Nume</dt>
+
+        <dd>  @Html.DisplayFor(m => m.Nume)</dd>
+        <dt>Prenume</dt>
+        <dd>  @Html.DisplayFor(m => m.Prenume)</dd>
+        <dt>Email</dt>
+        <dd>  @Html.DisplayFor(m => m.Email)</dd>
+        <dt>Telefon</dt>
+        <dd>  @Html.DisplayFor(m => m.Tel)</dd>
+        <dt>Username</dt>
+        <dd>  @Html.DisplayFor(m => m.Username)</dd>
+        <dt>Parola</dt>
+        <dd>@Html.DisplayFor(m => m.Password)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index","OperationAngajat")
+</p>
+
+ 

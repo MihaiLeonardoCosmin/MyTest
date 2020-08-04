@@ -1,0 +1,59 @@
+﻿@model SCADT.ViewModels.ControlContentWebSite
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Functie, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(model => model.angajat.Functie,
+        Model.FunctiAngajati, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Functie, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Nume, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Nume, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Nume, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Prenume, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Prenume, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Prenume, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Email, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Email, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Tel, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Tel, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Tel, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Username, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.angajat.Username, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.angajat.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.angajat.Password, new { htmlAttributes = new { @class = "form-control" , @value="" +Model.angajat.Password + ""} })
+        @Html.ValidationMessageFor(model => model.angajat.Password, "", new { @class = "text-danger" })
+    </div>
+</div>
+

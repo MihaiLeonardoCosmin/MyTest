@@ -1,0 +1,31 @@
+﻿@model SCADT.Models.Santier
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Denumire)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>Denumire</dt>
+        <dd>@Html.DisplayFor(model => model.Denumire,new { @class = "santier" }) </dd>
+      
+        <dt>Locatie</dt>
+        <dd>@Html.DisplayFor(model => model.Locatie)</dd>
+
+        <dt>Data Inceperii</dt>
+        <dd>@Html.DisplayFor(model => model.DataInceperi)</dd>
+
+        <dt>Data Finalizari</dt>
+        <dd>@Html.DisplayFor(model => model.DataFinalizari) </dd>
+
+        <dt>Angajatii</dt>
+        <dd><label id="Angajat"></label></dd>
+        
+        <dt>Utilaje</dt>
+        <dd>@Html.DisplayFor(model => model.utilaj.Denumire)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 

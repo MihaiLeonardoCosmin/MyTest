@@ -1,0 +1,122 @@
+﻿@model SCADT.ViewModels.AddSantierViewModel
+
+
+<div class="container"></div>
+<div class="container">
+    <div class="stepwizard col-md-offset-3">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                <p>Date Santier</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-primary btn-circle">2</a>
+                <p>Aloca Angajati</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-primary btn-circle">3</a>
+                <p>Aloca Utilaje</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Santiere-->
+  
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                    <h3>Date Santier</h3>
+                    <div class="form-group">
+                        <label class="control-label">Denumire Santir</label>
+                        <input maxlength="100" type="text" required="Required" class="form-control" id="Santier" placeholder="BLOC ANL" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Adresa</label>
+                        <input maxlength="200" type="text" required="Required" class="form-control" id="Adresa" placeholder="Localitatea Bals" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Data inceperi lucrari</label>
+                        <input maxlength="40" type="text" required="Required" class="form-control" id="DataInceperi" placeholder="11/02/2020" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Termenul de executie</label>
+                        <input maxlength="40" type="text" required="Required" class="form-control" id="Termenul" placeholder="22/09/2040" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Stagiul lucrari</label>
+                        <input maxlength="100" type="text" required="Required" class="form-control" id="Satgiu" placeholder="In desfasurare" />
+                    </div>
+                    <input type="hidden" id="FirmaId" value="@Session["Id"]" />
+                    <button class="btn btn-primary nextBtn btn-lg pull-right santierAdd" type="button">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Angajati-->
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                    <h3>Aloca Muncitori</h3>
+                    <div class="form-group row col-md-12">
+                        <label class="control-label">Adauga Angajat</label>
+                        @Html.DropDownListFor(model => model.Santier.IdAngajat, Model.Denumire_angajati, "", new { @class = "form-control angajat" })
+                        <br />
+                        <input type="button" class="btn btn-success" id="btnAdd" value="Adauga Angajat" />
+                    </div>
+                    <div class="row col-md-12">
+                        <table id="tblCustomer" class="table">
+                            <thead> 
+                                <tr>
+                                    <th scope="col">Nume Angajat</th>
+                                    <th scope="col">Optiuni</th>
+                                    <th scope="col" class="hide">Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <input type="hidden" id="IdFirma" value="@Session["Id"]" /> 
+                    </div>
+                    <div class=" row col-md-12">
+                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Prev</button>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right angajatAdd addId" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Utilaje-->
+        <div class="row setup-content" id="step-3">
+            <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                    <h3>Aloca Utilaje</h3>
+                    <div class="form-group row col-md-12">
+                        <label class="control-label">Adauga Utilaje</label>
+                        @Html.DropDownListFor(model => model.Santier.IdUtilaj, Model.utilaje, "", new { @class = "form-control utilaj" })
+                        <br />
+                        <input type="button" class="btn btn-success" id="btnAddUtilaje" value="Adauga utilaj" />
+                    </div>
+                    <div class="row col-md-12">
+                        <table id="tblUtilaje" class="table">
+                            <thead>
+                                <tr><th scope="col">Denumire Utialj</th></tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table> 
+                    </div>
+                    <div class="row col-md-12">
+                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Prev</button>
+                        <button class="btn btn-success nextBtn btn-lg pull-right  adaugaUtialej" type="button">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+<script src="~/Scripts/AlocaAngajatiPtSantier.js"></script>
+
+<script src="~/Scripts/AdaugaSantier.js"></script>

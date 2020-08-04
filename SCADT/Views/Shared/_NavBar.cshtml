@@ -1,0 +1,23 @@
+﻿ 
+<div class="row">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @Html.ActionLink("Home", "Index", "Index", new { id = Session["Id"] }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("ShowAngajati","OperationAngajat",new { id = Session["Id"] })">Angajati</a></li>
+                    <li><a href="@Url.Action("Index","Utilaje",new { id = Session["Id"] })">Utilaje</a></li>
+                    <li><a href="@Url.Action("Index","Santier",new { id = Session["Id"] })">Santiere</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

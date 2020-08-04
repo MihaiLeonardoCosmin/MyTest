@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SCADT.Models.Angajat>
+
+@Html.Partial("_NavBar")
+
+@if (TempData["check"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["check"]
+    </div>
+}
+<p>
+    <a href="@Url.Action("AdaugaAngajat","OperationAngajat")" class="btn btn-primary">Creaza Angajat <span class="glyphicon glyphicon-plus"></span></a>
+    <a href="@Url.Action("AddFunctie","OperationAngajat")" class="btn btn-primary">Creaza Functie <span class="glyphicon glyphicon-plus"></span></a>
+</p>
+
+@if (Model.Count() <= 0)
+{
+    <div class="alert alert-info">
+        <h3 class="lead text-center">Nu aveti nici un angajat</h3>
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Firma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Functie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prenume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunctiAngajat.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Detail", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "OperationAngajat")
+</div>
